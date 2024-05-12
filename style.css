@@ -1,4 +1,26 @@
 *{
     margin: 0;
     padding: 0;
+    border: none;
+}
+
+.container{ 
+    width: 480px;
+    height: 480px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px auto;
+    gap: 3px;
+    border: 1px solid red; 
+}
+
+.individual {
+    --gap: 3px;
+    --columns: 16;
+    --rows: 16;
+    width: 30px;
+    height: 30px;
+    width: calc(( 100% - ((var(--columns) - 1 ) * var(--gap)))/var(--columns));
+    height: calc(( 100% - ((var(--columns) - 1 ) * var(--gap)))/var(--rows));
+    /* border: 1px solid blue; */
 }
