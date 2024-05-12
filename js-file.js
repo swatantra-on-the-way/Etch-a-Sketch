@@ -1,22 +1,27 @@
-let a = document.querySelector("#grid-size");
-a.addEventListener("click", function setGridSize(e){
+let size_btn = document.querySelector("#grid-size");
+size_btn.addEventListener("click", function setGridSize(e){
     let a = prompt("Enter the Grid size you want (1 - 100): ");
     if (parseInt(a) >= 0 && parseInt(a) <= 100) {
         grid_size = parseInt(a);
-        deleteGrid(grid_size);
+        deleteGrid();
         createGrid(grid_size);
     }
 });
 
-// function clearGrid() {
-//     let all = document.querySelectorAll(".individual");
-//     for (let i = 0; i < all.length; i++){
-//         all[i].style.backgroundColor = "white";
-//     }
-// }
+let reset_btn = document.querySelector("#reset");
+reset_btn.addEventListener("click", () => {
+    clearGrid();
+});
 
-function deleteGrid(grid_size){
-    let parent = document.querySelector(".container");
+function clearGrid() {
+    let all = document.querySelectorAll(".individual");
+    for (let i = 0; i < all.length; i++){
+        all[i].style.backgroundColor = "white";
+    }
+}
+
+function deleteGrid(){
+    let parent = container;
     while(parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
