@@ -9,8 +9,8 @@ body{
     background-color: lightpink;
 }
 .container{ 
-    width: 480px;
-    height: 480px;
+    width: 500px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
     margin: 60px auto;
