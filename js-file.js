@@ -15,11 +15,11 @@ function createBoxes(){
         for (let j = 0; j < 16; j++){
             let div = document.createElement("div");
             div.classList.add("individual");
-            //div.style.width = "25px";
-            //div.style.height = "25px";
-            div.style.backgroundColor = selectColor();
-            container.appendChild(div);
             
+            div.addEventListener("mouseover", () => {
+                div.style.backgroundColor = selectColor();
+            })
+            container.appendChild(div);
         }
     }
 }
