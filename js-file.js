@@ -27,14 +27,26 @@ function deleteGrid(){
     }
 }
 
-function selectColor() {
+function selectColor(div) {
     let r = 0;
     let g = 0;
     let b = 0;
 
+    if (!(div.style.opacity)) {
+        div.style.opacity = "0";
+    }
+
+    if (Number(div.style.opacity) < 1) {
+        div.style.opacity = Number(div.style.opacity) + 0.1 + "";
+    }
+    console.log(div.style.opacity);
+
+    
     r = Math.floor(Math.random() * 256);
     g = Math.floor(Math.random() * 256);
     b = Math.floor(Math.random() * 256);
+
+    
     return "rgb("+r+","+g+","+b+")";
 }
 
@@ -48,7 +60,7 @@ function createGrid(grid_size){
             div.style.setProperty("--rows", grid_size);
             
             div.addEventListener("mouseover", () => {
-                div.style.backgroundColor = selectColor();
+                div.style.backgroundColor = selectColor(div);
             })
             container.appendChild(div);
         }
