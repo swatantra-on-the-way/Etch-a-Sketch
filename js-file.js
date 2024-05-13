@@ -39,7 +39,6 @@ function selectColor(div) {
     if (Number(div.style.opacity) < 1) {
         div.style.opacity = Number(div.style.opacity) + 0.1 + "";
     }
-    console.log(div.style.opacity);
 
     
     r = Math.floor(Math.random() * 256);
